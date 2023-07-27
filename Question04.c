@@ -3,27 +3,15 @@
 
 int main()
 {
-    char letter;
-    printf("Enter a character:");
-    scanf("%c", &letter);
-    switch(letter)
+    int number, remainder, sum=0;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    while(number>0)
     {
-        case'a':
-        case'A':
-        case'e':
-        case'E':
-        case'i':
-        case'I':
-        case'o':
-        case'O':
-        case'u':
-        case'U':
-            printf("%c is a vowel.\n,", letter);
-            break;
-        default:
-            printf("%c is not a vowel.\n", letter);
-            break;
-
+        remainder=number%10;
+        sum+=remainder;
+        number/=10;
     }
+    printf("The sum of the digits is: %d\n", sum);
     return 0;
 }

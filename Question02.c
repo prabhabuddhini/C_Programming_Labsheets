@@ -1,47 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int main()
 {
-    int choice;
-    float n1, n2, result;
-    printf("Menu-Driven Calculator");
-    printf("1.Addition\n");
-    printf("2.Subtraction\n");
-    printf("3.Division");
-    printf("4.Multiplication\n");
-    printf("Enter your choice(1-4):");
-    scanf("%d", &choice);
-    printf("Enter the first number:");
-    scanf("%f", &n1);
-    switch(choice)
+    int marks[10];
+    int total=0;
+    int i;
+    //marks
+    printf("Enter the 10 marks\n");
+    for(i=0;i<10;i++)
     {
-        case 1:
-            result=n1+n2;
-            printf("result:%.2f\n", result);
-            break;
-        case 2:
-            result=n1-n2;
-            printf("result:%.2f\n", result);
-            break;
-        case 3:
-            if(n2!=0)
-            {
-                result=n2/n2;
-                printf("result:%.2f\n", result);
-            }
-            else
-            {
-                printf("Error:cannot divide by zero.\n");
-            }
-            break;
-        case 4:
-            result=n1*n2;
-            printf("result:%.2f\n", result);
-            break;
-        default:
-            printf("Error:Invalid choice.\n");
-            break;
+        printf("Mark %d:",i+1);
+        scanf("%d", &marks[i]);
+        total+=marks[i];
     }
+    float average=(float)total/10;
+    printf("Total marks: %d\n", total);
+    printf("Average marks: %d\n", average);
+    if(average<50)
+    {
+        printf("Fail!\n");
+    }
+    else
+    {
+        printf("Pass!\n");
+    }
+
     return 0;
 }
