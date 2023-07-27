@@ -1,13 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-int n1,n2,max;
-printf("Enter two numbers");
-scanf("%d %d",&n1,&n2);
-if(n1>n2)
-max=n1;
-else
-max=n2;
-printf("The highest number is %d\n",max);
-return 0;
+    int number;
+    printf("Enter an integer:");
+    scanf("%d", &number);
+    if(number%2==0)
+    {
+        printf("%d is an even number.\n", number);
+    }
+    else
+    {
+        printf("%d is an odd number.\n", number);
+    }
+    return 0;
 }
