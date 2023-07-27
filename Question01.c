@@ -1,48 +1,51 @@
 #include <stdio.h>
 
+#define ROWS 3
+#define COLS 3
+
+void matrixSum(int mat1[][COLS], int mat2[][COLS], int sumMatrix[][COLS]) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            sumMatrix[i][j] = mat1[i][j] + mat2[i][j];
+        }
+    }
+}
+
+// Function to display a matrix
+void displayMatrix(int matrix[][COLS]) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main() {
-    int arr[10];
-    int i;
-    int min, max;
-    double sum = 0.0;
+    int matrix1[ROWS][COLS], matrix2[ROWS][COLS], sumMatrix[ROWS][COLS];
 
-    // Input values to the array
-    printf("Enter 10 integer values:\n");
-    for (i = 0; i < 10; i++) {
-        printf("Value %d: ", i + 1);
-        scanf("%d", &arr[i]);
-    }
-
-    // Find minimum and maximum values
-    min = arr[0];
-    max = arr[0];
-    for (i = 1; i < 10; i++) {
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-        if (arr[i] > max) {
-            max = arr[i];
+    // Input values for matrix1
+    printf("Enter values for matrix1 (3x3):\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            scanf("%d", &matrix1[i][j]);
         }
     }
 
-    // Calculate the sum for average
-    for (i = 0; i < 10; i++) {
-        sum += arr[i];
+    // Input values for matrix2
+    printf("Enter values for matrix2 (3x3):\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
     }
 
-    // Calculate the average
-    double average = sum / 10.0;
+    // Calculate the sum of the two matrices
+    matrixSum(matrix1, matrix2, sumMatrix);
 
-    // Print the results
-    printf("Minimum value: %d\n", min);
-    printf("Maximum value: %d\n", max);
-    printf("Average value: %.2f\n", average);
-
-    // Reverse order of values
-    printf("Reverse order of values: ");
-    for (i = 9; i >= 0; i--) {
-        printf("%d ", arr[i]);
-    }
+    // Display the sum matrix
+    printf("Matrix Sum:\n");
+    displayMatrix(sumMatrix);
 
     return 0;
 }
