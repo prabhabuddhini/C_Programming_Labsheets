@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
-
 int main()
 {
-    int age;
-    printf("HI, HOW OLD ARE YOU?");
-    scanf("%d",&age);
-    printf("\n\n WELCOME %d\n",age);
-    printf("LET'S BE FRIENDS!\n");
-
-    return 0;
+int n1,n2,max;
+printf("Enter two numbers");
+scanf("%d %d",&n1,&n2);
+if(n1>n2)
+max=n1;
+else
+max=n2;
+printf("The highest number is %d\n",max);
+return 0;
 }
